@@ -1,0 +1,12 @@
+__pycache__/*
+**/*.ipynb_checkpoints/
+*.pyc
+.git/*
+.idea/*
+.ipynb_checkpoints/*
+.jupyter/*
+.venv/*
+.vs/*
+data/*
+Logging/*
+config.json
