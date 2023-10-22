@@ -1,5 +1,3 @@
-import os
-from pathlib import Path
 from warnings import warn
 
 import pandas as pd
@@ -38,8 +36,12 @@ class DataFetcher:
                 f'which might not be the latest version of the data!'
                 f'Please specify the version of the dataset to prevent this from happening.')
 
-        input_dataset = Dataset.get_by_name(workspace, name=input_dataset_name, version=input_dataset_version)
-        df = input_dataset.to_pandas_dataframe()
+        #######################
+        # YOUR CODE HERE
+        input_dataset = None
+        df = None
+        #######################
+
         print('Data fetched')
         print(f'Data version: {input_dataset.version}')
         return df

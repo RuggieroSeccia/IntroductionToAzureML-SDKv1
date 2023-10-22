@@ -1,13 +1,11 @@
 import ast
 import os
-import pickle
 from pathlib import Path
 from typing import Dict, Union
 
 import click
 from click.core import Context, Option, Argument
 
-from PipelineTrainer import PipelineTrainer
 
 
 def validate_dict(ctx: Context, param: Union[Option, Argument], value: str) -> Union[Dict, None]:
@@ -64,18 +62,18 @@ def main(train_data_dir,
     os.environ['JOBLIB_TEMP_FOLDER'] = '/tmp'
 
     print('Loading the data...')
-    x_train = pickle.load(open(os.path.join(train_data_dir, 'x_train.pickle'), 'rb'))
-    y_train = pickle.load(open(os.path.join(train_data_dir, 'y_train.pickle'), 'rb'))
+    #######################
+    # YOUR CODE HERE
+
+    #######################
     print('Data loaded')
 
-    PipelineTrainer.execute(X_train=x_train,
-                            y_train=y_train,
-                            categorical_class_minimum_occurrences=categorical_class_minimum_occurrences,
-                            method_missing_value=method_missing_value,
-                            model_params=model_params,
-                            output_dir=output_dir,
-                            random_state_training=random_state_training
-                            )
+    print('Calling the PipelineTrainer')
+    #######################
+    # YOUR CODE HERE
+
+    #######################
+    print('PipelineTrainer executed')
 
 
 if __name__ == "__main__":

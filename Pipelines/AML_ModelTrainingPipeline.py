@@ -142,16 +142,10 @@ class define_AML_ModelTrainingPipeline:
             allow_reuse=allow_reuse_all_components)
 
         # PipelineEvaluator_AML
-        pipeline_evaluator_step = PythonScriptStep(
-            name="model_evaluator",
-            source_directory="./Components/Training/PipelineEvaluator",
-            script_name="PipelineEvaluator_AML.py",
-            arguments=["--test_data_dir", test_data,
-                       "--pipeline_dir", model_pipeline,
-                       ],
-            inputs=[test_data, model_pipeline],
-            runconfig=run_config,
-            allow_reuse=allow_reuse_all_components)
+        #######################
+        # YOUR CODE HERE - define the AML step for the PipelineEvaluator_AML
+
+        #######################
 
         # Persisting model
         model_pusher_step = PythonScriptStep(
@@ -170,8 +164,10 @@ class define_AML_ModelTrainingPipeline:
             allow_reuse=allow_reuse_all_components)
 
         # Define pipeline
+        #######################
+        # YOUR CODE HERE - specify the evaluator should run before the model_pusher
 
-        model_pusher_step.run_after(pipeline_evaluator_step)
+        #######################
 
         pipeline = Pipeline(
             description=get_git_properties(),
@@ -181,7 +177,10 @@ class define_AML_ModelTrainingPipeline:
                 data_transformer_step,
                 data_splitter_step,
                 pipeline_trainer_step,
-                pipeline_evaluator_step,
+                #######################
+                # YOUR CODE HERE
+
+                #######################
                 model_pusher_step
             ],
         )

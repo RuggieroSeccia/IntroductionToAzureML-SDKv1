@@ -1,4 +1,4 @@
-# EducationFactory - course on MLOps 
+# EducationFactory - Course on MLOps 
 ## Setting up the environment for local usage
 
 1. Install miniconda (see https://docs.conda.io/en/latest/miniconda.html)

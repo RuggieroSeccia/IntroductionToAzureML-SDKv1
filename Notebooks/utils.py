@@ -7,14 +7,16 @@ def fetch_uploaded_files_from_run(run_id: str,
                                   output_file_path: str):
     """Function to fetch the files uploaded at run level. It returns the path where the data are downloaded"""
     os.makedirs(output_file_path, exist_ok=True)
+    print(f"Downloading data from run with id {run_id}")
 
     # we connect to the run
-    ws = Workspace.from_config()
-    run = Run.get(ws, run_id)
-
-    # we download the data we want
-    print(f"Downloading data from run with id {run_id}")
-    run.download_file(dir_data_to_fetch, output_file_path=output_file_path)
+    #######################
+    # YOUR CODE HERE
+    ws = None
+    run = None
+    # download the data
+    # run.download_file(<YOUR CODE HERE>)
+    #######################
     print(f'Data downloaded and saved at {output_file_path}')
     path_to_downloaded_data = os.path.join(output_file_path, os.path.basename(dir_data_to_fetch))
     return path_to_downloaded_data

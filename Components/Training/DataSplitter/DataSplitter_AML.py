@@ -42,14 +42,17 @@ def main(input_dir, output_train_data_dir, output_test_data_dir,
     print('DataSplitter executed')
 
     print('Saving the split dataset...')
-    output_train_data_dir.mkdir(parents=True, exist_ok=True)
-    x_train.to_pickle(os.path.join(output_train_data_dir, 'x_train.pickle'))
-    y_train.to_pickle(os.path.join(output_train_data_dir, 'y_train.pickle'))
-    print('Training data saved')
+    #######################
+    # YOUR CODE HERE
 
-    output_test_data_dir.mkdir(parents=True, exist_ok=True)
-    x_test.to_pickle(os.path.join(output_test_data_dir, 'x_test.pickle'))
-    y_test.to_pickle(os.path.join(output_test_data_dir, 'y_test.pickle'))
+
+    #######################
+    print('Training data saved')
+    #######################
+    # YOUR CODE HERE
+
+
+    #######################
     print('Test data saved')
 
 
